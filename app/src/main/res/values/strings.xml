@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">2018067_Nouval</string>
+    <string name="Close">Close</string>
+    <string name="Open">Open</string>
+    <string name="deskription_menu">Toko Oleh Oleh Haji Abah Noval Sudah Berdiri Sejak tahun 2000 di Pasuruan.</string>
+    <string name="ingredients">Diskon minggu ini 60% OFF</string>
+    <string name="price">Harga :</string>
+    <string name="Harga_Cenil">Rp.100.000</string>
+    <string name="navigation_drawer_open">Open
+NavigationDrawer</string>
+    <string name="navigation_drawer_close">Close
+NavigationDrawer</string>
+    <string-array name="TokoAbahNoval">
+        <item>Kopyah</item>
+        <item>Kurma</item>
+        <item>Sajadah</item>
+    </string-array>
+    <string-array name="star">
+        <item>4.6</item>
+        <item>4.7</item>
+        <item>4.5</item>
+    </string-array>
+    <string-array name="deskripsi">
+        <item>20.000</item>
+        <item>30.000</item>
+        <item>50.000</item>
+    </string-array>
+</resources>
