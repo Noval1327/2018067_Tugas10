@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.bab5_2018061">
+    package="com.example.a2018067_tugas5">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,13 +18,16 @@
         android:theme="@style/Theme.2018067Tugas5"
         tools:targetApi="31">
         <activity
-            android:name="com.example.a2018067_tugas5.MainActivity3"
+            android:name=".DisplayData"
             android:exported="false" />
         <activity
-            android:name="com.example.a2018067_tugas5.MainActivity2"
+            android:name=".MainActivity3"
             android:exported="false" />
         <activity
-            android:name="com.example.a2018067_tugas5.MainActivity"
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +36,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.example.a2018067_tugas5.AlarmReceiver" />
+        <receiver android:name=".AlarmReceiver" />
+
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
     </application>
 
 </manifest>

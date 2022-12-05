@@ -79,7 +79,7 @@ public class MainActivity2 extends AppCompatActivity {
                 }else if (id == R.id.nav_kontak){
                     Intent a = new Intent(MainActivity2.this, MainActivity2.class);
                     startActivity(a);
-                }else if (id == R.id.nav_categories){
+                }else if (id == R.id.nav_database){
                     Intent a = new Intent(MainActivity2.this, MainActivity3.class);
                     startActivity(a);
                 }

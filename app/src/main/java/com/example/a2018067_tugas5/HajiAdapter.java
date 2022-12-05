@@ -25,10 +25,8 @@ public class HajiAdapter extends RecyclerView.Adapter<HajiAdapter.ZaloraViewHold
     @Override
     public HajiAdapter.ZaloraViewHolder
     onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater =
-                LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_haji,
-                parent, false);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.item_haji, parent, false);
         return new ZaloraViewHolder(view);
     }
     @Override
