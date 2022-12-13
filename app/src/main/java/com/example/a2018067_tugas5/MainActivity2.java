@@ -83,6 +83,10 @@ public class MainActivity2 extends AppCompatActivity {
                     Intent a = new Intent(MainActivity2.this, MainActivity3.class);
                     startActivity(a);
                 }
+                else if (id == R.id.nav_RESTApi){
+                    Intent a = new Intent(MainActivity2.this, MainActivity4.class);
+                    startActivity(a);
+                }
                 return true;
             }
         });
@@ -135,7 +139,7 @@ public class MainActivity2 extends AppCompatActivity {
     private void createNotificationChannel() {
         //mendeskripsikan channel notifikasi yang akan dibangun
         CharSequence name = "INI ALARM MANAGER";
-        String description = "Alarm untuk dawet";
+        String description = "Alarm untuk Oleh Oleh Haji";
         //tingkat importance = high ( penting sekali )
         int importance = NotificationManager.IMPORTANCE_HIGH;
         NotificationChannel channel = new NotificationChannel("AlarmManager", name, importance);

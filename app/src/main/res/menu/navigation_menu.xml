@@ -14,5 +14,9 @@
             android:id="@+id/nav_database"
             android:icon="@drawable/ic_baseline_storage_24"
             android:title="Database" />
+        <item
+            android:id="@+id/nav_RESTApi"
+            android:icon="@drawable/ic_baseline_storage_24"
+            android:title="RESTApi" />
     </group>
 </menu>
