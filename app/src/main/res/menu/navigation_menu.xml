@@ -18,5 +18,9 @@
             android:id="@+id/nav_RESTApi"
             android:icon="@drawable/ic_baseline_storage_24"
             android:title="RESTApi" />
+        <item
+            android:id="@+id/nav_References"
+            android:icon="@drawable/ic_btn_logout"
+            android:title="LogOut" />
     </group>
 </menu>

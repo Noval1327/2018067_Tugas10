@@ -11,34 +11,45 @@ import androidx.work.ExistingWorkPolicy;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.a2018067_tugas5.databinding.ActivityMainBinding;
-import com.example.a2018067_tugas5.databinding.ActivityMainBinding;
-import com.example.a2018067_tugas5.databinding.ActivityMainBinding;
+import android.database.sqlite.SQLiteDatabase;
 
+import com.example.a2018067_tugas5.databinding.ActivityMainBinding;
+import com.example.a2018067_tugas5.databinding.ActivityMainBinding;
+import com.example.a2018067_tugas5.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
-public class MainActivity extends AppCompatActivity {
+import android.widget.Toast;
 
+public class MainActivity extends AppCompatActivity  {
+    MyDbHelper myDbHelper;
+    private ActivityMainBinding binding;
+    SharedPreferences.Editor editor;
+    SharedPreferences preferences;
     RecyclerView recylerView;
     String s1[], s2[],s3[];
     int images[] =
-            {R.drawable.kopyah,R.drawable.kurma,R.drawable.sajadah};
+            {
+                    R.drawable.kopyah,R.drawable.kurma,R.drawable.sajadah
+            };
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
-    private ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         dl = (DrawerLayout)findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this,dl,R.string.Open,R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
         dl.addDrawerListener(abdt);
         abdt.syncState();
+
+
         //action Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView nav_view = (NavigationView)findViewById(R.id.nav_view);
@@ -50,22 +61,31 @@ public class MainActivity extends AppCompatActivity {
                     Intent a = new Intent(MainActivity.this, MainActivity.class);
                     startActivity(a);
                 }else if (id == R.id.nav_kontak){
-                    Intent a = new
-                            Intent(MainActivity.this, MainActivity2.class);
+                    Intent a = new Intent(MainActivity.this, MainActivity2.class);
                     startActivity(a);
                 }else if (id == R.id.nav_database){
-                    Intent a = new
-                            Intent(MainActivity.this, MainActivity3.class);
+                    Intent a = new Intent(MainActivity.this, MainActivity3.class);
                     startActivity(a);
                 }
                 else if (id == R.id.nav_RESTApi){
-                    Intent a = new
-                            Intent(MainActivity.this, MainActivity4.class);
+                    Intent a = new Intent(MainActivity.this, MainActivity4.class);
                     startActivity(a);
+                }
+                else if (id == R.id.nav_References){
+                    Intent a = new Intent(MainActivity.this, MainActivity5.class);
+                    startActivity(a);
+                    editor.clear();
+                    editor.commit();
                 }
                 return true;
             }
         });
+        ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        preferences = getSharedPreferences("AndroidHiveLogin",0);
+        editor = preferences.edit();
+
+
         //recycle View
         recylerView = findViewById(R.id.recyclerView);
         s1 = getResources().getStringArray(R.array.TokoAbahNoval);
@@ -91,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item)
     {
-        return abdt.onOptionsItemSelected(item) ||
-                super.onOptionsItemSelected(item);
+        return abdt.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
+
 }
